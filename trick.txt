@@ -1,0 +1,23 @@
+  		OpenFileDialog opd = new OpenFileDialog();
+            opd.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if(opd.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = new Bitmap(opd.FileName);
+            }
+
+
+
+		String name = textBox1.Text;
+            String password = textBox2.Text;
+
+            if(password.Length < 6 && password.Equals("abc")){
+                MessageBox.Show("Successfully Login!");
+                Home home = new Home("Hello",name,23);
+                this.Hide();
+                home.Show();
+            }
+            else
+            {
+                MessageBox.Show("Fail");
+                this.Hide();
+            }
